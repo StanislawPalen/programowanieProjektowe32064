@@ -40,14 +40,14 @@ while (password != "admin123");
 Console.WriteLine("Zalogowano pomyślnie!");
 */
 
-/* ZADANIE 2
- string number;
+/* ZADANIE 2 
+int number;
 do
 {
     Console.Write("Podaj liczbę: ");
     int.TryParse(Console.ReadLine(), out number);
 }
-while (number >= 0);
+while (number <= 0);
 Console.WriteLine("Prawidłowa liczba!");
 */
 
