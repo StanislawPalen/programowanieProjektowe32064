@@ -1,4 +1,3 @@
-using System;
 /* ZADANKO ze sklepem
  const int requiredAge = 16;
 const int beerRequiredAge = 18;
@@ -79,7 +78,7 @@ class Program {
 }
 */
 
-/* ZADANIE 5 */
+/* ZADANIE 5 
 class KontoBankowe{
     private double saldo;
     public void Wplata(double kwota) { saldo += kwota; }
@@ -103,10 +102,70 @@ class Program {
         mojeKonto.Wyplata(600); // Próba wypłaty większej kwoty niż saldo
     }
 }
+*/
 
-/* ZADANIE 6 */
+/* ZADANIE 6 
+class Zwierze{
+        public void Jedz() => Console.WriteLine("Zwierzę je");
+    }
+    class Pies : Zwierze{
+        public void Szczekaj() => Console.WriteLine("Hau hau!");
+    }
+    class Kot : Zwierze{
+        public void Miaucz() => Console.WriteLine("Miau miau!");
+    }
+    */
 
+/* ZADANIE 7 
+class Zwierze{
+    public virtual void DajGlos() => Console.WriteLine("Zwierzę wydaje dźwięk");
+    }
+class Pies : Zwierze{
+    public override void DajGlos() => Console.WriteLine("Hau hau!");
+    }
+class Kot : Zwierze{
+    public override void DajGlos() => Console.WriteLine("Miau!");
+}
+class Program
+{
+    public static string[] Zwierzeta = { "Pies", "Kot" };
 
-/* ZADANIE 7 */
+    static void Main()
+    {
+        foreach (var zwierz in Zwierzeta)
+        {
+            Zwierze z;
+            if (zwierz == "Pies")
+                z = new Pies();
+            else if (zwierz == "Kot")
+                z = new Kot();
+            else
+                z = new Zwierze();
 
-/* ZADANIE 8 */
+            z.DajGlos();
+        }
+    }
+}
+*/
+
+/* ZADANIE 8 
+class Pojazd{
+    public virtual void Start() => Console.WriteLine("Pojazd uruchomiony");
+}
+class Samochod : Pojazd{
+    public void Jedz() => Console.WriteLine("Samochód jedzie");
+}
+class ElektrycznySamochod : Samochod{
+    public void Laduj() => Console.WriteLine("Ładowanie baterii...");
+}
+class Program
+{
+    static void Main()
+    {
+        ElektrycznySamochod tesla = new ElektrycznySamochod();
+        tesla.Start();
+        tesla.Jedz();
+        tesla.Laduj();
+    }
+}
+*/
