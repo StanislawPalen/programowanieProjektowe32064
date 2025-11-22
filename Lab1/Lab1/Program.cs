@@ -1,3 +1,4 @@
+using System;
 /* ZADANKO ze sklepem
  const int requiredAge = 16;
 const int beerRequiredAge = 18;
@@ -59,13 +60,53 @@ foreach (var city in cities)
 }
 */
 
-/* ZADANIE 4 */
+/* ZADANIE 4 
 
+class Osoba{
+    public string Imie;
+    public int Wiek;
+    public void PrzedstawSie(){
+        Console.WriteLine($"Jestem {Imie} i mam {Wiek} lat!");
+    }
+}
+class Program {
+    static void Main() {
+        Osoba osoba1 = new Osoba();
+        osoba1.Imie = "Jan";
+        osoba1.Wiek = 25;
+        osoba1.PrzedstawSie();
+    }
+}
+*/
 
 /* ZADANIE 5 */
+class KontoBankowe{
+    private double saldo;
+    public void Wplata(double kwota) { saldo += kwota; }
+    public double PobierzSaldo() { return saldo; }
+    public void Wyplata(double kwota) {
+        if(kwota <= saldo){
+            saldo -= kwota;
+        } else {
+            Console.WriteLine("Niewystarczające środki na koncie.");
+        }
+    }
+}
 
+class Program {
+    static void Main() {
+        KontoBankowe mojeKonto = new KontoBankowe();
+        mojeKonto.Wplata(1000);
+        Console.WriteLine($"Saldo po wpłacie: {mojeKonto.PobierzSaldo()}");
+        mojeKonto.Wyplata(500);
+        Console.WriteLine($"Saldo po wypłacie: {mojeKonto.PobierzSaldo()}");
+        mojeKonto.Wyplata(600); // Próba wypłaty większej kwoty niż saldo
+    }
+}
 
 /* ZADANIE 6 */
 
 
 /* ZADANIE 7 */
+
+/* ZADANIE 8 */
