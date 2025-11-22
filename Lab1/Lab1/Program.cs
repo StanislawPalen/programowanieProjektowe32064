@@ -128,20 +128,13 @@ class Kot : Zwierze{
 }
 class Program
 {
-    public static string[] Zwierzeta = { "Pies", "Kot" };
+    public static Zwierze[] Zwierzeta = { new Pies(), new Kot() };
 
     static void Main()
     {
         foreach (var zwierz in Zwierzeta)
         {
-            Zwierze z;
-            if (zwierz == "Pies")
-                z = new Pies();
-            else if (zwierz == "Kot")
-                z = new Kot();
-            else
-                z = new Zwierze();
-
+            Zwierze z = zwierz;
             z.DajGlos();
         }
     }
