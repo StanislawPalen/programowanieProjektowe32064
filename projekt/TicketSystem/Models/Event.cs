@@ -27,4 +27,9 @@ public class Event
             AvailableTickets--;
         }
     }
+    public void IncreaseTickets()
+    {
+        AvailableTickets++;
+    }
 }
+

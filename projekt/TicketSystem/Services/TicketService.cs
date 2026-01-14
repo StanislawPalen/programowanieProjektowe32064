@@ -22,4 +22,24 @@ public class TicketService
         user.AddTicket(ticket);
         return true;
     }
+
+    public bool TryRefundTicket(int ticketId, User user, List<Event> events)
+    {
+        var ticket = user.Tickets.FirstOrDefault(t => t.Id == ticketId);
+        if (ticket == null)
+        {
+            return false;
+        }
+
+        var ev = events.FirstOrDefault(e => e.Id == ticket.EventId);
+        if (ev == null)
+        {
+            return false;
+        }
+
+        user.Tickets.Remove(ticket);
+        ev.IncreaseTickets();
+
+        return true;
+    }
 }
