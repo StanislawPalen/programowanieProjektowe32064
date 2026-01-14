@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Name": "Virtual Concert",
+    "Date": "2026-02-01T20:00:00",
+    "AvailableTickets": 5
+  },
+  {
+    "Id": 2,
+    "Name": "Online Festival",
+    "Date": "2026-03-10T18:00:00",
+    "AvailableTickets": 10
+  }
+]
