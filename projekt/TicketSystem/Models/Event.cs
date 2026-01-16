@@ -6,13 +6,15 @@ public class Event
     public string Name { get; private set; }
     public DateTime Date { get; private set; }
     public int AvailableTickets { get; private set; }
+    public decimal Price { get; private set; }
 
-    public Event(int id, string name, DateTime date, int availableTickets)
+    public Event(int id, string name, DateTime date, int availableTickets, decimal price)
     {
         Id = id;
         Name = name;
         Date = date;
         AvailableTickets = availableTickets;
+        Price = price;
     }
 
     public bool HasAvailableTickets()
@@ -27,9 +29,11 @@ public class Event
             AvailableTickets--;
         }
     }
+
     public void IncreaseTickets()
     {
         AvailableTickets++;
     }
 }
+
 

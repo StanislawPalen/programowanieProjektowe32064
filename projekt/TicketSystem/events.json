@@ -3,12 +3,14 @@
     "Id": 1,
     "Name": "Virtual Concert",
     "Date": "2026-02-01T20:00:00",
-    "AvailableTickets": 5
+    "AvailableTickets": 5,
+    "Price": 50
   },
   {
     "Id": 2,
     "Name": "Online Festival",
     "Date": "2026-03-10T18:00:00",
-    "AvailableTickets": 10
+    "AvailableTickets": 10,
+    "Price": 70
   }
 ]

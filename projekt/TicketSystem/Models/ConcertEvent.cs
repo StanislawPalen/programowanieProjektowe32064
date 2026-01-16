@@ -12,8 +12,9 @@ public class ConcertEvent : Event
         string name,
         DateTime date,
         int availableTickets,
-        string artist
-    ) : base(id, name, date, availableTickets)
+        string artist,
+        decimal price
+    ) : base(id, name, date, availableTickets, price)
     {
         Artist = artist;
     }

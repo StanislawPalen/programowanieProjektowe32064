@@ -17,11 +17,12 @@ while (true)
 
     Console.WriteLine("\nDostępne wydarzenia:");
     foreach (var ev in events)
-    {
-        Console.WriteLine(
-            $"{ev.Id}. {ev.Name} | data: {ev.Date:d} | bilety: {ev.AvailableTickets}"
-        );
-    }
+{
+    Console.WriteLine(
+        $"{ev.Id}. {ev.Name} | Data: {ev.Date:yyyy-MM-dd HH:mm} | Cena: {ev.Price} PLN | Dostępne: {ev.AvailableTickets}"
+    );
+}
+
 
     Console.WriteLine("\nOpcje:");
     Console.WriteLine("1. Kup bilet");
@@ -50,7 +51,12 @@ while (true)
             continue;
         }
 
-        var success = ticketService.TryBuyTicket(selectedEvent, user, 50);
+        var success = ticketService.TryBuyTicket(
+    selectedEvent,
+    user,
+    selectedEvent.Price
+);
+
         Console.WriteLine(success ? "Bilet kupiony!" : "Brak dostępnych biletów.");
     }
     else if (choice == "2")
